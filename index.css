@@ -7,12 +7,6 @@ p {
     padding: 0;
 }
 
-a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 48px;
-}
-
 p {
     text-align: center;
     margin-bottom: 100px;
@@ -30,8 +24,11 @@ body {
     font-size: 48px;
 }
 
-.phone {
-    margin: 0 auto;
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 48px;
     width: 60%;
     height: 90px;
     line-height: 90px;
@@ -40,4 +37,12 @@ body {
     border-radius: 10px;
     margin-bottom: 20px;
     text-align: center;
+}
+
+a:active {
+    background-color: #0abb0781;
+}
+
+a:active a {
+    color: #111;
 }
