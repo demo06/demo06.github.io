@@ -10,6 +10,7 @@ p {
 a {
     text-decoration: none;
     color: #fff;
+    font-size: 48px;
 }
 
 p {
@@ -29,14 +30,14 @@ body {
     font-size: 48px;
 }
 
-.btn {
-    width: 200px;
-    background: no-repeat;
+.phone {
+    margin: 0 auto;
+    width: 60%;
+    height: 90px;
+    line-height: 90px;
     background-color: #09bb07;
     padding: 10px;
     border-radius: 10px;
-}
-
-.phone {
+    margin-bottom: 20px;
     text-align: center;
 }
