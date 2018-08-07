@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>请拨打电话</title>
+</head>
+
+<body>
+    <div>
+        <a id="mobile"></a>
+        <a href="tel:15639700383">拨打电话</a><br>
+        <a href="sms:15639700383?body=你好,下来挪下车吧">发送短信提醒挪车</a>
+    </div>
+    <script>
+        function getURl(name) {
+            var reg = new RegExp('\\?' + name + '=(.[^&#]*)');
+            var val = window.location.href.match(reg);
+            return val;
+        }
+        document.getElementById('mobile').setAttribute('href', 'tel:' + getURl('tel'));
+        document.getElementById('mobile').click();
+    </script>
+</body>
+
+</html>
