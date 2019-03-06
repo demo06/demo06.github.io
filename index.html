@@ -1,19 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <title>产品介绍</title>
-<!--     <link rel="stylesheet" href="./index.css"> -->
+    <title></title>
+    <script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 </head>
+<style type="text/css">
+    body {
+        background: #fff;
+        display: -webkit-flex;
+        display: flex;
+    }
+    
+    .btn-audio {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background: url(img/voice_stop.png) no-repeat center bottom;
+        background-size: cover;
+    }
+</style>
 
 <body>
-<!--   <div class="main"> -->
-        <audio controls="controls">
-            <source src="1.mp3" type="audio/mp3">
-          Your browser does not support the audio tag.
-          </audio>
-<!--     </div> -->
+    <div class="btn-audio">
+        <audio id="mp3Btn">
+				<source src="GG.mp3" type="audio/mpeg" />
+			</audio>
+    </div>
+
+    <script type="text/javascript">
+        $(function() {
+            //播放完毕
+            $('#mp3Btn').on('ended', function() {
+                    console.log("音频已播放完成");
+                    $('.btn-audio').css({
+                        'background': 'url(img/voice_stop.png) no-repeat center bottom',
+                        'background-size': 'cover'
+                    });
+                })
+                //播放器控制
+            var audio = document.getElementById('mp3Btn');
+            audio.volume = .3;
+            $('.btn-audio').click(function() {
+                event.stopPropagation(); //防止冒泡
+                if (audio.paused) { //如果当前是暂停状态
+                    $('.btn-audio').css({
+                        'background': 'url(img/voice_play.png) no-repeat center bottom',
+                        'background-size': 'cover'
+                    });
+                    audio.play(); //播放
+                    return;
+                } else { //当前是播放状态
+                    $('.btn-audio').css({
+                        'background': 'url(img/voice_stop.png) no-repeat center bottom',
+                        'background-size': 'cover'
+                    });
+                    audio.pause(); //暂停
+                }
+            });
+        })
+    </script>
+
 
 </body>
 
